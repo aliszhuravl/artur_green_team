@@ -1,0 +1,129 @@
+.btn {
+  position: relative;
+  display: block;
+  vertical-align: top;
+  height: 80px;
+  padding: 30px 65px;
+  border-radius: 0;
+  border: 1px solid #383838;
+  background-color: #383838;
+  color: #a9a9a9;
+  font-family: $font-family;
+  font-size: 16px;
+  text-align: left;
+  white-space: nowrap;
+  text-decoration: none;
+  cursor: pointer;
+  outline: 0;
+  box-shadow: none;
+  transition: all 0.3s;
+
+  &:hover,
+  &:active,
+  &:focus {
+    outline: 0;
+    text-decoration: none;
+  }
+  
+  &:hover,
+  &:focus {
+    opacity: 0.7;
+  }
+  
+  &:active {
+    opacity: 0.7;
+  }
+}
+
+.btn_disabled {
+  border-color: $color-gray-40;
+  background-color: $color-gray-10;
+  color: $color-gray-60;
+  cursor: default;
+
+  &:hover,
+  &:active,
+  &:focus {
+    border-color: $color-gray-40;
+    background-color: $color-gray-10;
+    color: $color-gray-60;
+  }
+}
+
+.btn_standart {
+  border-color: $color-blue-30;
+  background-color: $color-blue-30;
+  color: $color-white;
+
+  &:hover,
+  &:focus {
+    border-color: $color-blue-50;
+    background-color: $color-blue-50;
+  }
+
+  &:active {
+    border-color: darken($color-blue-50, 5%);
+    background-color: darken($color-blue-50, 5%);
+  }
+}
+
+
+.btn_attach {
+  position: relative;
+  background-color: transparent;
+  padding: 0;
+  border: none;
+  box-shadow: none;
+  outline: 0;
+  color: $color-blue-30;
+  font-family: $font-family_bold;
+  overflow: hidden;
+  cursor: pointer;
+  
+  &:hover {
+    color: $color-blue-50;
+  }
+
+  & > input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    width: auto;
+    height: auto;
+    font-size: 20px;
+    cursor: pointer;
+  }
+
+  &.btn_disabled > input[type=file] {
+    display: none;
+  }
+}
+
+.btn_upload {
+  overflow: hidden;
+
+  & > input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    width: auto;
+    height: auto;
+    font-size: 20px;
+    cursor: pointer;
+  }
+
+  &.btn_disabled > input[type=file] {
+    display: none;
+  }
+}
+
+.send_button {
+  height: 80px;
+  border-radius: 0;
+  width: 100%;
+  max-width: 500px;
+}

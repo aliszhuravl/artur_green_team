@@ -1,0 +1,164 @@
+
+.slider_container {
+  width: 100%;
+}
+
+.slider_main {
+  width: 100%;
+  &__slide {
+    max-width: 450px;
+    margin-right: 70px;
+    .slide_img {
+      margin-bottom: 20px;
+    }
+    p {
+      color: #fff;
+      font-size: 14px;
+      opacity: 0.6;
+    }
+  }
+}
+
+.slider_nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 50px;
+  max-width: 960px;
+  width: 100%;
+  .left {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 50%;
+  }
+}
+
+//.slick-track {
+//  left: 240px !important;
+//}
+
+.slick-list {
+  padding: 0 !important;
+}
+
+.slider_box {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.slider_nav {
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .count {
+      color: #fff;
+      margin: 0 10px;
+    }
+  }
+}
+
+.btn_prev {
+  cursor: pointer;
+  position: relative;
+  width: 20px;
+  height: 1px;
+  background-color: #fff;
+  &:after {
+    position: absolute;
+    top:-3px;
+    left:0;
+    width: 6px;
+    height: 6px;
+    content: '';
+    border-right: 1px solid #fff;
+    border-top: 1px solid #fff;
+    transform: rotate(-135deg);
+  }
+}
+
+.btn_next {
+  cursor: pointer;
+  position: relative;
+  width: 20px;
+  height: 1px;
+  background-color: #fff;
+  &:after {
+    position: absolute;
+    top: -3px;
+    right: 0;
+    width: 6px;
+    content: '';
+    height: 6px;
+    border-right: 1px solid #fff;
+    border-top: 1px solid #fff;
+    transform: rotate(45deg);
+  }
+}
+
+.active_filter {
+  opacity: 1;
+}
+
+.brand_slider {
+  max-width: 1000px;
+  margin-bottom: 80px;
+}
+
+.bs_slide {
+  width: 100%;
+  display: flex !important;
+  align-items: center;
+  justify-content: space-between;
+  margin-right: 70px;
+}
+
+.b_btn_prev {
+  cursor: pointer;
+  position: relative;
+  width: 20px;
+  height: 1px;
+  background-color: #fff;
+  &:after {
+    position: absolute;
+    top:-3px;
+    left:0;
+    width: 6px;
+    height: 6px;
+    content: '';
+    border-right: 1px solid #fff;
+    border-top: 1px solid #fff;
+    transform: rotate(-135deg);
+  }
+}
+
+.b_btn_next {
+  cursor: pointer;
+  position: relative;
+  width: 20px;
+  height: 1px;
+  background-color: #fff;
+  &:after {
+    position: absolute;
+    top: -3px;
+    right: 0;
+    width: 6px;
+    content: '';
+    height: 6px;
+    border-right: 1px solid #fff;
+    border-top: 1px solid #fff;
+    transform: rotate(45deg);
+  }
+}
+
+.brands {
+  .slider_nav {
+    margin-bottom: 0;
+  }
+}
+
+.slick-disabled {
+  opacity: 0.5;
+}
