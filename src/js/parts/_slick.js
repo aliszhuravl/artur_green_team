@@ -8,7 +8,16 @@ $(document).ready(function() {
         prevArrow: $('.btn_prev'),
         nextArrow: $('.btn_next'),
         touchMove: true,
-        speed: 1000
+        speed: 1000,
+        responsive: [
+            {
+                breakpoint: 640,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }
+        ]
     });
 });
 
@@ -54,13 +63,22 @@ $('.web-filter').on('click', function(){
 $(document).ready(function() {
     $('.brand_slider__box').slick({
         infinite: false,
-        slidesToShow: 1,
+        slidesToShow: 2,
         slidesToScroll: 1,
         arrows: true,
         prevArrow: $('.b_btn_prev'),
         nextArrow: $('.b_btn_next'),
         touchMove: true,
-        speed: 1000
+        speed: 1000,
+        responsive: [
+            {
+                breakpoint: 640,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }
+        ]
     });
 });
 

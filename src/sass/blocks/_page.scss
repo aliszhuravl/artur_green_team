@@ -46,7 +46,7 @@
         &_left {
           width: 60%;
           .main_h {
-            max-width: 450px;
+            max-width: 500px;
           }
         }
         &_right {
@@ -95,8 +95,8 @@
   position: absolute;
   right: 60px;
   height: 100vh;
-  padding-top: 60px;
-  padding-bottom: 60px;
+  padding-top: 50px;
+  padding-bottom: 50px;
   top: 0;
     &__inner {
       height: 100%;
@@ -108,7 +108,7 @@
           flex-direction: column;
           align-items: center;
             img {
-              margin-bottom: 40px;
+              margin-bottom: 30px;
             }
             a {
               opacity: 1;
@@ -124,13 +124,13 @@
           align-items: center;
           justify-content: center;
             a {
-              opacity: 1;
+              opacity: 0.5;
               transition: all 0.3s;
               &:first-child {
                 margin-bottom: 20px;
               }
               &:hover {
-                opacity: 0.5;
+                opacity: 1;
               }
             }
         }
@@ -142,7 +142,7 @@
 }
 
 .full_h {
-  max-width: 900px;
+  max-width: 980px;
 }
 
 .section_name {
@@ -166,6 +166,11 @@
           width: 50%;
         }
     }
+  p {
+    span {
+      opacity: 0.6;
+    }
+  }
 }
 
 .section_video {
@@ -186,12 +191,29 @@
 .centered {
   display: flex;
   align-items: center;
-  margin-right: 40px;
+  margin-right: 80px;
 }
 
 form {
   display: flex;
   flex-wrap: wrap;
+    button {
+      height: 79px !important;
+    }
+    .form__item {
+      &:focus {
+        position: relative;
+        z-index: 2;
+      }
+      &:nth-child(2n) {
+        margin-left: -1px;
+        position: relative;
+      }
+      &:nth-child(3n+3) {
+        margin-top: -1px;
+        position: relative;
+      }
+    }
 }
 
 .section_long {
@@ -216,7 +238,8 @@ form {
   padding: 40px 140px;
     p {
       color: #fff;
-      font-size: 16px;
+      font-size: 14px;
+      font-family: $font-family;
       opacity: 0.6;
     }
 }
@@ -224,7 +247,7 @@ form {
 .lang {
   position: absolute;
   z-index: 9;
-  padding: 0 0 60px 60px;
+  padding: 0 0 50px 50px;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -234,8 +257,53 @@ form {
       opacity: 0.6;
       text-decoration: none;
       transition: all 0.5s;
+      padding: 10px;
         &:hover {
           opacity: 1;
         }
     }
+}
+
+.framed {
+  padding-top: 20px;
+}
+
+.start-box {
+  padding-top: 0;
+}
+
+.form_contacts__inner {
+  padding-top: 20px;
+}
+
+.white_svg {
+  fill: #fff;
+}
+
+.arrow_down {
+  position: absolute;
+  bottom: 60px;
+}
+
+.mobile_box {
+  display: none;
+}
+
+.mobile_conf {
+  display: none;
+}
+
+//.section_contacts {
+//  &__inner {
+//    display: flex;
+//    flex-direction: column;
+//  }
+//}
+
+.logo_mobile {
+  display: none;
+}
+
+.play {
+  display: none;
 }

@@ -1,1 +1,23 @@
 //some styles
+.fp-auto-height.fp-section,
+.fp-auto-height .fp-slide,
+.fp-auto-height .fp-tableCell{
+  height: auto !important;
+}
+
+.fp-responsive .fp-auto-height-responsive.fp-section,
+.fp-responsive .fp-auto-height-responsive .fp-slide,
+.fp-responsive .fp-auto-height-responsive .fp-tableCell {
+  height: auto !important;
+}
+
+.fp-scrollable {
+  overflow: hidden;
+  position: relative;
+}
+.fp-scroller{
+  overflow: hidden;
+}
+.iScrollIndicator{
+  border: 0 !important;
+}
