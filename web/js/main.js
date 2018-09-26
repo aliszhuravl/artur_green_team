@@ -8,6 +8,7 @@
          */
 
         var mediaCheckMobile = window.matchMedia('(max-width: 640px)');
+        var mediaCheckSmall = window.matchMedia('(max-width: 360px)');
         var mediaCheckTablet = window.matchMedia('(min-width: 641px) and (max-width: 1199px)');
         var mediaCheckDesktop = window.matchMedia('(min-width: 1200px)');
         var viewport = document.getElementById('viewport');
@@ -18,6 +19,9 @@
             viewport.setAttribute('content', 'width=device-width');
         } else if (mediaCheckDesktop.matches) {
             viewport.setAttribute('content', 'width=device-width, initial-scale=1.0');
+        }
+        else if (mediaCheckSmall.matches) {
+            viewport.setAttribute('content', 'width=device-width');
         }
     });
 })(jQuery);
@@ -134,10 +138,12 @@ var fullpageInit = false;
 $(document).ready(function() {
     $('.slider_main').slick({
         infinite: false,
-        slidesToShow: 2,
+        slidesToShow: 2.5,
         slidesToScroll: 1,
-        // centerMode: true,
+        touchThreshold: 10,
         arrows: true,
+        centermode: true,
+        centerPadding: '20%',
         prevArrow: $('.btn_prev'),
         nextArrow: $('.btn_next'),
         touchMove: true,

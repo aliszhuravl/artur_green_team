@@ -6,14 +6,17 @@
 .slider_main {
   width: 100%;
   &__slide {
-    max-width: 450px;
-    margin-right: 70px;
+    //max-width: 450px;
+    //margin-right: 70px;
+    margin-right: 0;
+    max-width: 100%;
+    float: left;
     .slide_img {
       margin-bottom: 20px;
     }
     p {
       color: #fff;
-      font-size: 14px;
+      font-size: 12px;
       opacity: 0.6;
     }
   }
@@ -180,3 +183,5 @@
 .slick-disabled {
   opacity: 0.5;
 }
+
+.slick-list{padding:0 20% 0 0;}

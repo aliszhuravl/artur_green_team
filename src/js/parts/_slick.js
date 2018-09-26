@@ -1,10 +1,12 @@
 $(document).ready(function() {
     $('.slider_main').slick({
         infinite: false,
-        slidesToShow: 2,
+        slidesToShow: 2.5,
         slidesToScroll: 1,
-        // centerMode: true,
+        touchThreshold: 10,
         arrows: true,
+        centermode: true,
+        centerPadding: '20%',
         prevArrow: $('.btn_prev'),
         nextArrow: $('.btn_next'),
         touchMove: true,

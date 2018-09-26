@@ -545,7 +545,7 @@ h3 {
 }
 
 .main_text {
-	font-size: 14px;
+	font-size: 12px;
 	letter-spacing: 2px;
 	text-transform: uppercase;
 	opacity: .6;
@@ -1001,6 +1001,12 @@ form .form__item:nth-child(3n+3) {
 
 .mobile_conf {
 	display: none;
+}
+
+.section_projects h2,
+.section_long h2,
+.section_why h2 {
+	font-size: 36px;
 }
 
 .logo_mobile {
@@ -1746,8 +1752,9 @@ form .form__item:nth-child(3n+3) {
 }
 
 .slider_main__slide {
-	max-width: 450px;
-	margin-right: 70px;
+	float: left;
+	max-width: 100%;
+	margin-right: 0;
 }
 
 .slider_main__slide .slide_img {
@@ -1755,7 +1762,7 @@ form .form__item:nth-child(3n+3) {
 }
 
 .slider_main__slide p {
-	font-size: 14px;
+	font-size: 12px;
 	opacity: .6;
 	color: #fff;
 }
@@ -1925,6 +1932,10 @@ form .form__item:nth-child(3n+3) {
 
 .slick-disabled {
 	opacity: .5;
+}
+
+.slick-list {
+	padding: 0 20% 0 0;
 }
 
 /*!
@@ -2328,7 +2339,7 @@ html.fp-enabled,
 .footer__inner,
 .slider-buttons-wrapper {
 	width: 100%;
-	min-width: 320px;
+	min-width: 360px;
 	max-width: 640px;
 }
 

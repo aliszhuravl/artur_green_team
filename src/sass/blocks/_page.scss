@@ -293,12 +293,11 @@ form {
   display: none;
 }
 
-//.section_contacts {
-//  &__inner {
-//    display: flex;
-//    flex-direction: column;
-//  }
-//}
+.section_projects, .section_long, .section_why {
+  h2 {
+    font-size: 36px;
+  }
+}
 
 .logo_mobile {
   display: none;
