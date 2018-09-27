@@ -1,6 +1,7 @@
 var fullpageInit = false;
+var mediaCheckDesktop = window.matchMedia('(min-width: 1200px)');
 
-// function fullpageSettings() {
+function fullpageSettings() {
 
     $('#fullpage').fullpage({
         anchors: ['main', 'second', 'third', 'fourth', 'fith', 'sixth', 'seventh'],
@@ -21,31 +22,28 @@ var fullpageInit = false;
                 $('.social').fadeOut(300);
             }
         }
-        // onLeave: function(index, nextIndex, direction){
-        //
-        // }
     });
     // $.fn.fullpage.setAllowScrolling(false);
-// }
+}
 
 
-// if ( $('.page-container').hasClass('page-main') ) {
-//
-//     $(window).on('load resize', function () {
-//
-//         if (mediaCheckDesktop.matches) {
-//
-//             if (!fullpageInit) {
-//                 fullpageSettings();
-//                 $.fn.fullpage.reBuild();
-//             }
-//         } else if ((mediaCheckMobile.matches) || (mediaCheckTablet.matches)) {
-//
-//             if (fullpageInit) {
-//                 fullpageInit = false;
-//                 $.fn.fullpage.destroy('all');
-//             }
-//
-//         }
-//     });
-// }
+
+if ( $('.page-container').hasClass('page-main') ) {
+
+    $(window).on('load resize', function () {
+
+        if ((mediaCheckDesktop.matches) || (mediaCheckTablet.matches)) {
+
+            if (!fullpageInit) {
+                fullpageSettings();
+                $.fn.fullpage.reBuild();
+            }
+        } else if ((mediaCheckMobile.matches)) {
+
+            if (fullpageInit) {
+                fullpageInit = false;
+                $.fn.fullpage.destroy('all');
+            }
+        }
+    });
+}

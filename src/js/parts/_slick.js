@@ -5,7 +5,6 @@ $(document).ready(function() {
         slidesToScroll: 1,
         touchThreshold: 10,
         arrows: true,
-        centermode: true,
         centerPadding: '20%',
         prevArrow: $('.btn_prev'),
         nextArrow: $('.btn_next'),
@@ -31,7 +30,19 @@ $('.slider_main')
 
 var filtered = false;
 
+
+$('.all-filter').on('click', function(){
+
+    $('.slider_main').slick('slickUnfilter');
+    filtered = false;
+    $('.all-filter').removeClass('active_filter');
+    $('.web-filter').removeClass('active_filter');
+    $('.brand-filter').removeClass('active_filter');
+});
+
 $('.brand-filter').on('click', function(){
+    $('.slider_main').slick('slickUnfilter');
+    $('.all-filter').removeClass('active_filter');
     if (filtered === false) {
         $('.slider_main').slick('slickFilter',':even');
         $('.brand-filter').addClass('active_filter');
@@ -39,18 +50,14 @@ $('.brand-filter').on('click', function(){
     } else {
         $('.slider_main').slick('slickUnfilter');
         $('.brand-filter').removeClass('active_filter');
+        $('.all-filter').removeClass('active_filter');
+        $('.web-filter').removeClass('active_filter');
         filtered = false;
     }
 });
 
-$('.all-filter').on('click', function(){
-
-        $('.slider_main').slick('slickUnfilter');
-        $('.all-filter').removeClass('active_filter');
-        filtered = false;
-});
-
 $('.web-filter').on('click', function(){
+    $('.slider_main').slick('slickUnfilter');
     if (filtered === false) {
         $('.slider_main').slick('slickFilter',':odd');
         $('.web-filter').addClass('active_filter');
@@ -58,6 +65,8 @@ $('.web-filter').on('click', function(){
     } else {
         $('.slider_main').slick('slickUnfilter');
         $('.web-filter').removeClass('active_filter');
+        $('.brand-filter').removeClass('active_filter');
+        $('.all-filter').removeClass('active_filter');
         filtered = false;
     }
 });
@@ -89,3 +98,25 @@ $('.brand_slider__box')
         var indexSlide = nextSlide + 1;
         $('.b_slide-number').text(indexSlide);
     });
+
+
+
+    $('.filter_btns').on('click', '.filter:not(.active_filter)', function () {
+        $(this).addClass('active_filter').siblings().removeClass('active_filter');
+    });
+
+
+$(document).ready(function() {
+    $('.project_slider').slick({
+        infinite: false,
+        slidesToShow: 1.2,
+        slidesToScroll: 1,
+        arrows: false,
+        touchThreshold: 10,
+        speed: 1000,
+        centerPadding: '60px',
+        adaptiveHeight: true,
+        centerMode:true,
+        focusOnSelect: true
+    });
+});

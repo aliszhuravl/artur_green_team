@@ -12,8 +12,8 @@
     padding: 25px 0 35px 0;
   }
   .head {
-    padding:0 35px;
-    top: 35px;
+    position: static;
+    padding: 35px 35px 0 35px;
     &__inner {
       .logo_box {
         width: 100%;

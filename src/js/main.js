@@ -4,3 +4,4 @@
 //= parts/_scrolling.js
 //= parts/_fullpage.js
 //= parts/_slick.js
+//= parts/_projects.js

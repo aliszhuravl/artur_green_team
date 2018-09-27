@@ -155,10 +155,10 @@
                         <div class="section__box_inner">
                             <div class="slider_box">
                                 <div class="slider_nav">
-                                    <div class="left">
-                                        <a href="#" class="main_text link_white all-filter">Все</a>
-                                        <a href="#" class="main_text link_white brand-filter">Брендинг</a>
-                                        <a href="#" class="main_text link_white web-filter">Веб-дизайн и разработка</a>
+                                    <div class="left filter_btns">
+                                        <a href="#" class="main_text link_white filter all-filter">Все</a>
+                                        <a href="#" class="main_text link_white filter brand-filter">Брендинг</a>
+                                        <a href="#" class="main_text link_white filter web-filter">Веб-дизайн и разработка</a>
                                     </div>
                                     <div class="right">
                                         <div class="slider_navig">
@@ -179,13 +179,13 @@
                                 <div class="slider_container">
                                     <div class="slider_main">
                                         <div class="slider_main__slide">
-                                            <div class="slide_img">
+                                            <div class="slide_img" id="drill">
                                                 <img src="img/drill.png" alt="#">
                                             </div>
                                             <p>Drillmaster</p>
                                         </div>
                                         <div class="slider_main__slide">
-                                            <div class="slide_img">
+                                            <div class="slide_img" id="vassa">
                                                 <img src="img/vassa.png" alt="#">
                                             </div>
                                             <p>Vassa & Co</p>
@@ -358,6 +358,43 @@
         </div>
     </main>
 
+</div>
+<div class="window" id="drill_window">
+    <div class="wrapper"></div>
+    <div class="window__inner">
+        <div class="window__inner_header">
+            <div class="left">
+                <p class="proj_name">Vassa&Co</p>
+            </div>
+            <div class="right">
+                <p>Похожий проект: от 100 000 р.</p>
+            </div>
+        </div>
+        <div class="window__inner_slider">
+            <div class="project_slider">
+                <div class="project_slide">
+                    <img src="img/proj.png" alt="#">
+                </div>
+                <div class="project_slide">
+                    <img src="img/proj.png" alt="#">
+                </div>
+                <div class="project_slide">
+                    <img src="img/proj.png" alt="#">
+                </div>
+                <div class="project_slide">
+                    <img src="img/proj.png" alt="#">
+                </div>
+            </div>
+        </div>
+        <div class="window__inner_bottom">
+            <div class="left">
+                <div class="proj_nav"><p>1/16</p></div>
+            </div>
+            <div class="right">
+                <a href="#" class="link">Подробнее о проекте</a>
+            </div>
+        </div>
+    </div>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="js/libs/jquery/jquery-3.1.1.min.js"><\/script>')</script>
