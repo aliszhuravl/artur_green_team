@@ -1,26 +1,34 @@
-(function($) {
+/**
+ *  set adaptive viewport on screens smaller then 640 and bigger than 1200
+ *  set static viewport on screens between 641px and 1199
+ */
 
-    $(window).on('load resize', function () {
+var mediaCheckMobile = window.matchMedia('(max-width: 640px)');
+var mediaCheckTablet = window.matchMedia('(min-width: 641px) and (max-width: 1279px)');
+var mediaCheckDesktop = window.matchMedia('(min-width: 1280px)');
 
-        /**
-         *  set adaptive viewport on screens smaller then 640 and bigger than 1200
-         *  set static viewport on screens between 641px and 1199
-         */
+$(window).on('load resize', function () {
+    var viewport = document.getElementById('viewport');
 
-        var mediaCheckMobile = window.matchMedia('(max-width: 640px)');
-        var mediaCheckTablet = window.matchMedia('(min-width: 641px) and (max-width: 1199px)');
-        var mediaCheckDesktop = window.matchMedia('(min-width: 1200px)');
-        var viewport = document.getElementById('viewport');
+    if (mediaCheckMobile.matches) {
+        viewport.setAttribute('content', 'width=device-width, initial-scale=1.0');
+    } else if (mediaCheckTablet.matches) {
+        viewport.setAttribute('content', 'width=device-width');
+    } else if (mediaCheckDesktop.matches) {
+        viewport.setAttribute('content', 'width=device-width, initial-scale=1.0');
+    }
+});
 
-        if (mediaCheckMobile.matches) {
-            viewport.setAttribute('content', 'width=device-width, initial-scale=1.0');
-        } else if (mediaCheckTablet.matches) {
-            viewport.setAttribute('content', 'width=device-width');
-        } else if (mediaCheckDesktop.matches) {
-            viewport.setAttribute('content', 'width=device-width, initial-scale=1.0');
-        }
-    });
-})(jQuery);
+$(window).on('load resize', function () {
+
+    if (mediaCheckMobile.matches) {
+        console.log('mobile');
+    } else if (mediaCheckTablet.matches) {
+        console.log('tablet');
+    } else if (mediaCheckDesktop.matches) {
+        console.log('desktop');
+    }
+});
 window.onload = function() {
 
     function GetIEVersion() {
@@ -81,7 +89,10 @@ window.onload = function() {
 
 })(jQuery);
 var fullpageInit = false;
-var mediaCheckDesktop = window.matchMedia('(min-width: 1200px)');
+
+var mediaCheckMobile = window.matchMedia('(max-width: 640px)');
+var mediaCheckTablet = window.matchMedia('(min-width: 641px) and (max-width: 1279px)');
+var mediaCheckDesktop = window.matchMedia('(min-width: 1280px)');
 
 function fullpageSettings() {
 
@@ -114,18 +125,19 @@ if ( $('.page-container').hasClass('page-main') ) {
 
     $(window).on('load resize', function () {
 
-        if ((mediaCheckDesktop.matches) || (mediaCheckTablet.matches)) {
+        if ((mediaCheckDesktop.matches)) {
 
             if (!fullpageInit) {
                 fullpageSettings();
                 $.fn.fullpage.reBuild();
             }
-        } else if ((mediaCheckMobile.matches)) {
+        } else if ((mediaCheckMobile.matches) || (mediaCheckTablet.matches)) {
 
             if (fullpageInit) {
                 fullpageInit = false;
                 $.fn.fullpage.destroy('all');
             }
+
         }
     });
 }
@@ -143,9 +155,16 @@ $(document).ready(function() {
         speed: 1000,
         responsive: [
             {
+                breakpoint: 1200,
+                settings: {
+                    slidesToShow: 1.5,
+                    slidesToScroll: 1
+                }
+            },
+            {
                 breakpoint: 640,
                 settings: {
-                    slidesToShow: 1,
+                    slidesToShow: 1.1,
                     slidesToScroll: 1
                 }
             }
@@ -214,7 +233,7 @@ $(document).ready(function() {
         speed: 1000,
         responsive: [
             {
-                breakpoint: 640,
+                breakpoint: 1200,
                 settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1
@@ -240,17 +259,23 @@ $('.brand_slider__box')
 $(document).ready(function() {
     $('.project_slider').slick({
         infinite: false,
-        slidesToShow: 1.2,
+        slidesToShow: 1.05,
         slidesToScroll: 1,
         arrows: false,
         touchThreshold: 10,
         speed: 1000,
         centerPadding: '60px',
         adaptiveHeight: true,
-        centerMode:true,
+        centerMode: true,
         focusOnSelect: true
     });
 });
+
+$('.project_slider')
+    .on('beforeChange', function(event, slick, currentSlide, nextSlide){
+        var indexSlide = nextSlide + 1;
+        $('.slide-number').text(indexSlide);
+    });
 $('#drill').on('click', function(){
     $('#drill_window').addClass('window_active');
 

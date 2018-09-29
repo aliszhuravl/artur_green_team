@@ -12,9 +12,16 @@ $(document).ready(function() {
         speed: 1000,
         responsive: [
             {
+                breakpoint: 1200,
+                settings: {
+                    slidesToShow: 1.5,
+                    slidesToScroll: 1
+                }
+            },
+            {
                 breakpoint: 640,
                 settings: {
-                    slidesToShow: 1,
+                    slidesToShow: 1.1,
                     slidesToScroll: 1
                 }
             }
@@ -83,7 +90,7 @@ $(document).ready(function() {
         speed: 1000,
         responsive: [
             {
-                breakpoint: 640,
+                breakpoint: 1200,
                 settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1
@@ -109,14 +116,20 @@ $('.brand_slider__box')
 $(document).ready(function() {
     $('.project_slider').slick({
         infinite: false,
-        slidesToShow: 1.2,
+        slidesToShow: 1.05,
         slidesToScroll: 1,
         arrows: false,
         touchThreshold: 10,
         speed: 1000,
         centerPadding: '60px',
         adaptiveHeight: true,
-        centerMode:true,
+        centerMode: true,
         focusOnSelect: true
     });
 });
+
+$('.project_slider')
+    .on('beforeChange', function(event, slick, currentSlide, nextSlide){
+        var indexSlide = nextSlide + 1;
+        $('.slide-number').text(indexSlide);
+    });

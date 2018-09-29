@@ -1,5 +1,8 @@
 var fullpageInit = false;
-var mediaCheckDesktop = window.matchMedia('(min-width: 1200px)');
+
+var mediaCheckMobile = window.matchMedia('(max-width: 640px)');
+var mediaCheckTablet = window.matchMedia('(min-width: 641px) and (max-width: 1279px)');
+var mediaCheckDesktop = window.matchMedia('(min-width: 1280px)');
 
 function fullpageSettings() {
 
@@ -32,18 +35,19 @@ if ( $('.page-container').hasClass('page-main') ) {
 
     $(window).on('load resize', function () {
 
-        if ((mediaCheckDesktop.matches) || (mediaCheckTablet.matches)) {
+        if ((mediaCheckDesktop.matches)) {
 
             if (!fullpageInit) {
                 fullpageSettings();
                 $.fn.fullpage.reBuild();
             }
-        } else if ((mediaCheckMobile.matches)) {
+        } else if ((mediaCheckMobile.matches) || (mediaCheckTablet.matches)) {
 
             if (fullpageInit) {
                 fullpageInit = false;
                 $.fn.fullpage.destroy('all');
             }
+
         }
     });
 }
