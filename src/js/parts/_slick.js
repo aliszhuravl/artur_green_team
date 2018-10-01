@@ -112,24 +112,3 @@ $('.brand_slider__box')
         $(this).addClass('active_filter').siblings().removeClass('active_filter');
     });
 
-
-$(document).ready(function() {
-    $('.project_slider').slick({
-        infinite: false,
-        slidesToShow: 1.05,
-        slidesToScroll: 1,
-        arrows: false,
-        touchThreshold: 10,
-        speed: 1000,
-        centerPadding: '60px',
-        adaptiveHeight: true,
-        centerMode: true,
-        focusOnSelect: true
-    });
-});
-
-$('.project_slider')
-    .on('beforeChange', function(event, slick, currentSlide, nextSlide){
-        var indexSlide = nextSlide + 1;
-        $('.slide-number').text(indexSlide);
-    });

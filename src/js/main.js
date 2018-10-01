@@ -5,3 +5,5 @@
 //= parts/_fullpage.js
 //= parts/_slick.js
 //= parts/_projects.js
+//= parts/_owl.js
+//= parts/_preloader.js

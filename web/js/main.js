@@ -254,28 +254,6 @@ $('.brand_slider__box')
     $('.filter_btns').on('click', '.filter:not(.active_filter)', function () {
         $(this).addClass('active_filter').siblings().removeClass('active_filter');
     });
-
-
-$(document).ready(function() {
-    $('.project_slider').slick({
-        infinite: false,
-        slidesToShow: 1.05,
-        slidesToScroll: 1,
-        arrows: false,
-        touchThreshold: 10,
-        speed: 1000,
-        centerPadding: '60px',
-        adaptiveHeight: true,
-        centerMode: true,
-        focusOnSelect: true
-    });
-});
-
-$('.project_slider')
-    .on('beforeChange', function(event, slick, currentSlide, nextSlide){
-        var indexSlide = nextSlide + 1;
-        $('.slide-number').text(indexSlide);
-    });
 $('#drill').on('click', function(){
     $('#drill_window').addClass('window_active');
 
@@ -283,4 +261,57 @@ $('#drill').on('click', function(){
 
 $('.wrapper').on('click', function(){
     $('#drill_window').removeClass('window_active');
+});
+$('.owl-carousel').owlCarousel({
+    items:1.3,
+    loop:false,
+    stagePadding: 50,
+    touchDrag: true,
+    center:true,
+    margin:60,
+    URLhashListener:true,
+    smartSpeed: 800,
+    startPosition: 'URLHash',
+    responsiveClass:true,
+    responsive: {
+        0: {
+            items: 1.1,
+            stagePadding: 0,
+            margin: 10
+        },
+        1200: {
+            items: 1.3,
+            loop:false,
+            stagePadding: 50,
+            touchDrag: true,
+            center:true,
+            margin:60,
+            URLhashListener:true,
+            smartSpeed: 800
+        }
+    }
+});
+
+$(document).ready(function() {
+$('.owl-carousel').on('changed.owl.carousel', function(e) {
+    $('.slide-number').text(e.item.index + 1)
+});
+});
+
+$(document).ready(function() {
+    $('.owl-carousel').on('click', '.owl-item', function () {
+        //получить индекс
+        var click = $(this).index();
+        //по клику листаем к слайду на который кликнули
+        $('.owl-carousel').trigger( 'to.owl.carousel', [click] );
+        // Или добавляем свою функцию вместо листания
+    });
+});
+jQuery(document).ready(function($) {
+    $(window).on('load', function() {
+        setTimeout(function() {
+            $('#preloader').addClass('fade');
+            $('body').removeClass('stopped');
+        }, 800);
+    });
 });
