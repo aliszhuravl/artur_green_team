@@ -1,3 +1,4 @@
+//= parts/_preloader.js
 //= parts/_viewport.js
 //= parts/_ie.js
 //= parts/_link-highlighting.js
@@ -6,4 +7,3 @@
 //= parts/_slick.js
 //= parts/_projects.js
 //= parts/_owl.js
-//= parts/_preloader.js

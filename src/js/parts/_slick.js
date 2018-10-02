@@ -82,7 +82,7 @@ $(document).ready(function() {
     $('.brand_slider__box').slick({
         infinite: false,
         slidesToShow: 2,
-        slidesToScroll: 1,
+        slidesToScroll: 2,
         arrows: true,
         prevArrow: $('.b_btn_prev'),
         nextArrow: $('.b_btn_next'),

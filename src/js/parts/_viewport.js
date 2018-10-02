@@ -4,8 +4,8 @@
  */
 
 var mediaCheckMobile = window.matchMedia('(max-width: 640px)');
-var mediaCheckTablet = window.matchMedia('(min-width: 641px) and (max-width: 1279px)');
-var mediaCheckDesktop = window.matchMedia('(min-width: 1280px)');
+var mediaCheckTablet = window.matchMedia('(min-width: 641px) and (max-width: 1200px)');
+var mediaCheckDesktop = window.matchMedia('(min-width: 1200px)');
 
 $(window).on('load resize', function () {
     var viewport = document.getElementById('viewport');

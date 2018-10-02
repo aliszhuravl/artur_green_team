@@ -1,11 +1,19 @@
+jQuery(document).ready(function($) {
+    $(window).on('load', function() {
+        setTimeout(function() {
+            $('#preloader').addClass('fade');
+            $('body').removeClass('stopped');
+        }, 800);
+    });
+});
 /**
  *  set adaptive viewport on screens smaller then 640 and bigger than 1200
  *  set static viewport on screens between 641px and 1199
  */
 
 var mediaCheckMobile = window.matchMedia('(max-width: 640px)');
-var mediaCheckTablet = window.matchMedia('(min-width: 641px) and (max-width: 1279px)');
-var mediaCheckDesktop = window.matchMedia('(min-width: 1280px)');
+var mediaCheckTablet = window.matchMedia('(min-width: 641px) and (max-width: 1200px)');
+var mediaCheckDesktop = window.matchMedia('(min-width: 1200px)');
 
 $(window).on('load resize', function () {
     var viewport = document.getElementById('viewport');
@@ -106,15 +114,15 @@ function fullpageSettings() {
         navigationPosition: 'left',
         afterLoad: function() {
             fullpageInit = true;
-        },
-        afterLoad: function(anchorLink, index) {
-            if (anchorLink == 'main' && index == 1) {
-                $('.social').fadeIn(300);
-            }
-            else {
-                $('.social').fadeOut(300);
-            }
         }
+        // afterLoad: function(anchorLink, index) {
+        //     if (anchorLink == 'main' && index == 1) {
+        //         $('.social').fadeIn(300);
+        //     }
+        //     else {
+        //         $('.social').fadeOut(300);
+        //     }
+        // }
     });
     // $.fn.fullpage.setAllowScrolling(false);
 }
@@ -225,7 +233,7 @@ $(document).ready(function() {
     $('.brand_slider__box').slick({
         infinite: false,
         slidesToShow: 2,
-        slidesToScroll: 1,
+        slidesToScroll: 2,
         arrows: true,
         prevArrow: $('.b_btn_prev'),
         nextArrow: $('.b_btn_next'),
@@ -268,11 +276,11 @@ $('.owl-carousel').owlCarousel({
     stagePadding: 50,
     touchDrag: true,
     center:true,
-    margin:60,
-    URLhashListener:true,
+    margin: 60,
     smartSpeed: 800,
     startPosition: 'URLHash',
     responsiveClass:true,
+    autoWidth:true,
     responsive: {
         0: {
             items: 1.1,
@@ -282,10 +290,10 @@ $('.owl-carousel').owlCarousel({
         1200: {
             items: 1.3,
             loop:false,
-            stagePadding: 50,
+            stagePadding: 150,
             touchDrag: true,
             center:true,
-            margin:60,
+            margin: 160,
             URLhashListener:true,
             smartSpeed: 800
         }
@@ -305,13 +313,5 @@ $(document).ready(function() {
         //по клику листаем к слайду на который кликнули
         $('.owl-carousel').trigger( 'to.owl.carousel', [click] );
         // Или добавляем свою функцию вместо листания
-    });
-});
-jQuery(document).ready(function($) {
-    $(window).on('load', function() {
-        setTimeout(function() {
-            $('#preloader').addClass('fade');
-            $('body').removeClass('stopped');
-        }, 800);
     });
 });

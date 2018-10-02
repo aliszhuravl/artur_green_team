@@ -16,15 +16,15 @@ function fullpageSettings() {
         navigationPosition: 'left',
         afterLoad: function() {
             fullpageInit = true;
-        },
-        afterLoad: function(anchorLink, index) {
-            if (anchorLink == 'main' && index == 1) {
-                $('.social').fadeIn(300);
-            }
-            else {
-                $('.social').fadeOut(300);
-            }
         }
+        // afterLoad: function(anchorLink, index) {
+        //     if (anchorLink == 'main' && index == 1) {
+        //         $('.social').fadeIn(300);
+        //     }
+        //     else {
+        //         $('.social').fadeOut(300);
+        //     }
+        // }
     });
     // $.fn.fullpage.setAllowScrolling(false);
 }

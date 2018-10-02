@@ -1,4 +1,10 @@
-@media (max-width: 1200px) {
+@media (max-width: 1198px) {
+  .form__item {
+    width: 100%;
+  }
+  .send_button {
+    width: 100%;
+  }
   .video_box {
     display: none;
   }
@@ -17,9 +23,6 @@
   }
   .section {
     margin-bottom: 180px;
-  }
-  .phone_link {
-
   }
   .section_projects h2, .section_long h2, .section_why h2 {
     font-size: 48px;
@@ -298,11 +301,27 @@
 }
 
 @media (max-width: 640px) {
+  .owl-item div {
+    width: 100%;
+  }
+  .owl-carousel .owl-item img {
+    display: block;
+    max-width: 320px;
+    width: 100% !important;
+  }
+  .mobile_call {
+    display: block;
+  }
+  .phone_link {
+    img {
+      display: none;
+    }
+  }
   .window__inner_header {
     padding: 0 40px;
   }
   .window__inner_bottom {
-    padding: 0 40px;
+    padding: 40px;
   }
 
   .form__item, .btn  {
@@ -378,7 +397,7 @@
   //  height: 70%;
   //}
   .section__inner {
-    padding: 35px 35px 60px 35px;
+    padding: 35px 35px 100px 35px;
     display: flex;
     flex-direction: column;
     &_left {

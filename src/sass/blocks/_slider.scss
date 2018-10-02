@@ -8,10 +8,18 @@
   &__slide {
     //max-width: 450px;
     //margin-right: 70px;
+    cursor: pointer;
     margin-right: 0;
     max-width: 100%;
     float: left;
+    &:hover {
+      .slide_img {
+        opacity: 0.8;
+      }
+    }
     .slide_img {
+      opacity: 1;
+      transition: all 0.3s;
       margin-bottom: 20px;
     }
     p {

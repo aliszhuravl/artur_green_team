@@ -4,11 +4,11 @@ $('.owl-carousel').owlCarousel({
     stagePadding: 50,
     touchDrag: true,
     center:true,
-    margin:60,
-    URLhashListener:true,
+    margin: 60,
     smartSpeed: 800,
     startPosition: 'URLHash',
     responsiveClass:true,
+    autoWidth:true,
     responsive: {
         0: {
             items: 1.1,
@@ -18,10 +18,10 @@ $('.owl-carousel').owlCarousel({
         1200: {
             items: 1.3,
             loop:false,
-            stagePadding: 50,
+            stagePadding: 150,
             touchDrag: true,
             center:true,
-            margin:60,
+            margin: 160,
             URLhashListener:true,
             smartSpeed: 800
         }
