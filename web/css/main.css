@@ -1577,8 +1577,8 @@ label[for='phone'] {
 }
 
 .preloader .logo_box .logo_s image {
-	width: 220px;
-	height: 16px;
+	width: 220px !important;
+	height: 16px !important;
 }
 
 .logo_s {
