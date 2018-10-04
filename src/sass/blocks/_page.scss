@@ -191,7 +191,7 @@
 .centered {
   display: flex;
   align-items: center;
-  margin-right: 80px;
+  margin-right: 120px;
 }
 
 form {
@@ -241,6 +241,7 @@ form {
       font-size: 14px;
       font-family: $font-family;
       opacity: 0.6;
+      letter-spacing: 0;
     }
 }
 
@@ -335,5 +336,13 @@ form {
 }
 
 .mobile_call {
+  display: none;
+}
+
+.desktop {
+  display: block;
+}
+
+.mobile_show {
   display: none;
 }

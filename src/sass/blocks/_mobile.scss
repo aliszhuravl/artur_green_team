@@ -2,6 +2,11 @@
   .form__item {
     width: 100%;
   }
+  .section_projects {
+    .section__inner {
+      padding-bottom: 40px;
+    }
+  }
   .send_button {
     width: 100%;
   }
@@ -301,6 +306,22 @@
 }
 
 @media (max-width: 640px) {
+  .owl-carousel video {
+    min-width: 320px;
+  }
+  .close img {
+    width: 20px;
+    height: 20px;
+  }
+  .window__inner {
+    padding-top: 45px;
+  }
+  .mobile_show {
+    display: block;
+  }
+  .desktop {
+    display: none;
+  }
   .owl-item div {
     width: 100%;
   }

@@ -72,3 +72,15 @@
     border-color: transparent;
   }
 }
+
+.form_error {
+  border-color: red;
+}
+
+#country, #phone {
+  display: inline-block;
+  width: auto;
+}
+label[for="phone"] {
+  display: block;
+}

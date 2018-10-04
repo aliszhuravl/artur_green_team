@@ -3,7 +3,7 @@ jQuery(document).ready(function($) {
         setTimeout(function() {
             $('#preloader').addClass('fade');
             $('body').removeClass('stopped');
-        }, 800);
+        }, 500);
     });
 });
 /**
@@ -253,9 +253,32 @@ $(document).ready(function() {
 
 $('.brand_slider__box')
     .on('beforeChange', function(event, slick, currentSlide, nextSlide){
-        var indexSlide = nextSlide + 1;
+        var indexSlide = (nextSlide + 2) / 2;
         $('.b_slide-number').text(indexSlide);
     });
+
+if ( $('.page-container').hasClass('page-main') ) {
+
+    $(window).on('load resize', function () {
+
+        if ((mediaCheckDesktop.matches)) {
+
+            $('.brand_slider__box')
+                .on('beforeChange', function(event, slick, currentSlide, nextSlide){
+                    var indexSlide = (nextSlide + 2) / 2;
+                    $('.b_slide-number').text(indexSlide);
+                });
+
+        } else if (mediaCheckMobile.matches) {
+
+            $('.brand_slider__box')
+                .on('beforeChange', function(event, slick, currentSlide, nextSlide){
+                    var indexSlide = (nextSlide + 1);
+                    $('.b_slide-number').text(indexSlide);
+                });
+        }
+    });
+}
 
 
 
@@ -269,6 +292,19 @@ $('#drill').on('click', function(){
 
 $('.wrapper').on('click', function(){
     $('#drill_window').removeClass('window_active');
+});
+
+$('.close').on('click', function(){
+    $('#drill_window').removeClass('window_active');
+});
+
+$('#portfolio').on('click', function(){
+    $('#port_window').addClass('window_active');
+
+});
+
+$('.close').on('click', function(){
+    $('#port_window').removeClass('window_active');
 });
 $('.owl-carousel').owlCarousel({
     items:1.3,
@@ -314,4 +350,10 @@ $(document).ready(function() {
         $('.owl-carousel').trigger( 'to.owl.carousel', [click] );
         // Или добавляем свою функцию вместо листания
     });
+});
+$(document).ready(function() {
+//1 пример
+$(function(){
+    $("#phone1").mask("+7(999) 999-9999");
+});
 });

@@ -895,7 +895,7 @@ h3 {
 
 .centered {
 	display: flex;
-	margin-right: 80px;
+	margin-right: 120px;
 	align-items: center;
 }
 
@@ -948,6 +948,7 @@ form .form__item:nth-child(3n+3) {
 .framed_text p {
 	font-family: 'HeroRegular', 'Arial', serif;
 	font-size: 14px;
+	letter-spacing: 0;
 	opacity: .6;
 	color: #fff;
 }
@@ -1050,6 +1051,14 @@ form .form__item:nth-child(3n+3) {
 	display: none;
 }
 
+.desktop {
+	display: block;
+}
+
+.mobile_show {
+	display: none;
+}
+
 .footer {
 	background-color: #d7d7d9;
 }
@@ -1144,6 +1153,20 @@ form .form__item:nth-child(3n+3) {
 .form__textarea_custom:focus {
 	border-color: transparent;
 	outline: 0;
+}
+
+.form_error {
+	border-color: red;
+}
+
+#country,
+#phone {
+	display: inline-block;
+	width: auto;
+}
+
+label[for='phone'] {
+	display: block;
 }
 
 /* fuck ie */
@@ -2281,6 +2304,10 @@ html.fp-enabled,
 	border: 0;
 }
 
+.lang {
+	display: none;
+}
+
 .wrapper {
 	position: fixed;
 	z-index: 11;
@@ -2318,6 +2345,10 @@ html.fp-enabled,
 	justify-content: space-between;
 }
 
+.window__inner video {
+	z-index: 99;
+}
+
 .window__inner_slider {
 	position: relative;
 	z-index: 12;
@@ -2348,6 +2379,28 @@ html.fp-enabled,
 .window__inner_bottom .link,
 .window__inner_bottom .nav__link {
 	font-size: 12px;
+	opacity: .6;
+}
+
+.close {
+	position: absolute;
+	z-index: 99;
+	top: 40px;
+	display: flex;
+	width: 100%;
+	padding: 0 40px;
+	align-items: flex-start;
+	justify-content: flex-end;
+}
+
+.close img {
+	width: 30px;
+	height: 30px;
+	cursor: pointer;
+	transition: all .3s;
+}
+
+.close img:hover {
 	opacity: .6;
 }
 
@@ -2383,6 +2436,10 @@ html.fp-enabled,
 
 .bottom_slide {
 	align-items: flex-end !important;
+}
+
+.owl-carousel video {
+	min-width: 1200px;
 }
 
 /**
@@ -2770,6 +2827,10 @@ html.fp-enabled,
 	width: 100%;
 }
 
+.section_projects .section__inner {
+	padding-bottom: 40px;
+}
+
 .send_button {
 	width: 100%;
 }
@@ -3150,6 +3211,27 @@ form .form__item:nth-child(2n) {
 .footer {
 	padding-right: 0;
 	padding-left: 0;
+}
+
+.owl-carousel video {
+	min-width: 320px;
+}
+
+.close img {
+	width: 20px;
+	height: 20px;
+}
+
+.window__inner {
+	padding-top: 45px;
+}
+
+.mobile_show {
+	display: block;
+}
+
+.desktop {
+	display: none;
 }
 
 .owl-item div {

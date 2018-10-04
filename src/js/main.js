@@ -7,3 +7,4 @@
 //= parts/_slick.js
 //= parts/_projects.js
 //= parts/_owl.js
+//= parts/_input.js
