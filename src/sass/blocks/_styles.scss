@@ -40,6 +40,15 @@
   overflow: hidden;
   align-items: center;
   justify-content: center;
+    .logo_box {
+      .logo_s {
+        height: 16px;
+        image {
+          width: 220px;
+          height: 16px;
+        }
+      }
+    }
 }
 
 .logo_s {
