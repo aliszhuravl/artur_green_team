@@ -48,11 +48,14 @@
               float:left;
             }
             img {
-
+              max-width: 640px;
+              max-height: 640px;
             }
         }
     }
 }
+
+
 
 .vid_inner {
   justify-content: center;
@@ -212,4 +215,13 @@
 
 .ports {
   display: none;
+}
+
+@media (max-height: 780px) and (min-height: 400px) {
+  .window__inner_header {
+    margin-bottom: 0;
+  }
+  .slick-item iframe {
+    max-height: 480px;
+  }
 }

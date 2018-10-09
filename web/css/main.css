@@ -2420,6 +2420,11 @@ html.fp-enabled,
 	float: left;
 }
 
+.window__inner_slider img {
+	max-width: 640px;
+	max-height: 640px;
+}
+
 .vid_inner {
 	justify-content: center;
 }
@@ -2964,6 +2969,18 @@ html.fp-enabled,
 
 .main_section {
 	height: 85% !important;
+}
+
+}
+
+@media (max-height: 780px) and (min-height: 400px) {
+
+.window__inner_header {
+	margin-bottom: 0;
+}
+
+.slick-item iframe {
+	max-height: 480px;
 }
 
 }

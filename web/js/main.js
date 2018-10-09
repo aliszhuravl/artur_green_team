@@ -299,8 +299,7 @@ $(document).ready(function() {
         prevArrow: $('.d-btn_prev'),
         nextArrow: $('.d-btn_next'),
         touchMove: true,
-        speed: 1000,
-        adaptiveHeight: true
+        speed: 1000
     });
 });
 
@@ -319,8 +318,7 @@ $(document).ready(function() {
         prevArrow: $('.a-btn_prev'),
         nextArrow: $('.a-btn_next'),
         touchMove: true,
-        speed: 1000,
-        adaptiveHeight: true
+        speed: 1000
     });
 });
 
@@ -339,8 +337,7 @@ $(document).ready(function() {
         prevArrow: $('.p-btn_prev'),
         nextArrow: $('.p-btn_next'),
         touchMove: true,
-        speed: 1000,
-        adaptiveHeight: true
+        speed: 1000
     });
 });
 
@@ -395,11 +392,13 @@ $('.close').on('click', function(){
 $('#portfolio').on('click', function(){
     $('#port_window').css('display', 'block');
     $('.ports').css('display','block');
+    $('.iframe').attr('src','https://player.vimeo.com/video/293941620?autoplay=1&controls=0&loop=1&color=ffffff&title=0&byline=0&portrait=0');
 });
 
 $('.close').on('click', function(){
     $('.ports').css('display','none');
     $('#port_window').fadeOut(500);
+    $('.iframe').attr('src','');
 });
 // $('.owl-carousel').owlCarousel({
 //     items:1,

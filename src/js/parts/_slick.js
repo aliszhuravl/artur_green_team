@@ -149,8 +149,7 @@ $(document).ready(function() {
         prevArrow: $('.d-btn_prev'),
         nextArrow: $('.d-btn_next'),
         touchMove: true,
-        speed: 1000,
-        adaptiveHeight: true
+        speed: 1000
     });
 });
 
@@ -169,8 +168,7 @@ $(document).ready(function() {
         prevArrow: $('.a-btn_prev'),
         nextArrow: $('.a-btn_next'),
         touchMove: true,
-        speed: 1000,
-        adaptiveHeight: true
+        speed: 1000
     });
 });
 
@@ -189,8 +187,7 @@ $(document).ready(function() {
         prevArrow: $('.p-btn_prev'),
         nextArrow: $('.p-btn_next'),
         touchMove: true,
-        speed: 1000,
-        adaptiveHeight: true
+        speed: 1000
     });
 });
 
