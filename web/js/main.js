@@ -2,7 +2,6 @@ jQuery(document).ready(function($) {
     $(window).on('load', function() {
         setTimeout(function() {
             $('#preloader').addClass('fade');
-            $('body').removeClass('stopped');
         }, 500);
     });
 });
@@ -106,10 +105,10 @@ function fullpageSettings() {
 
     $('#fullpage').fullpage({
         anchors: ['main', 'second', 'third', 'fourth', 'fith', 'sixth', 'seventh'],
-        scrollOverflow: true,
         verticalCentered: false,
         css3: true,
         menu: '#myMenu',
+        // licenseKey: 'OPEN-SOURCE-GPLV3-LICENSE',
         navigation: false,
         navigationPosition: 'left',
         afterLoad: function() {
@@ -285,6 +284,71 @@ if ( $('.page-container').hasClass('page-main') ) {
     $('.filter_btns').on('click', '.filter:not(.active_filter)', function () {
         $(this).addClass('active_filter').siblings().removeClass('active_filter');
     });
+
+
+
+// Projects sliders
+
+
+$(document).ready(function() {
+    $('.slick-drill').slick({
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: true,
+        prevArrow: $('.d-btn_prev'),
+        nextArrow: $('.d-btn_next'),
+        touchMove: true,
+        speed: 1000,
+        adaptiveHeight: true
+    });
+});
+
+$('.slick-drill')
+    .on('beforeChange', function(event, slick, currentSlide, nextSlide){
+        var indexSlide = nextSlide + 1;
+        $('.d-slide-number').text(indexSlide);
+    });
+
+$(document).ready(function() {
+    $('.slick-all').slick({
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: true,
+        prevArrow: $('.a-btn_prev'),
+        nextArrow: $('.a-btn_next'),
+        touchMove: true,
+        speed: 1000,
+        adaptiveHeight: true
+    });
+});
+
+$('.slick-all')
+    .on('beforeChange', function(event, slick, currentSlide, nextSlide){
+        var indexSlide = nextSlide + 1;
+        $('.a-slide-number').text(indexSlide);
+    });
+
+$(document).ready(function() {
+    $('.slick-pskov').slick({
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: true,
+        prevArrow: $('.p-btn_prev'),
+        nextArrow: $('.p-btn_next'),
+        touchMove: true,
+        speed: 1000,
+        adaptiveHeight: true
+    });
+});
+
+$('.slick-pskov')
+    .on('beforeChange', function(event, slick, currentSlide, nextSlide){
+        var indexSlide = nextSlide + 1;
+        $('.p-slide-number').text(indexSlide);
+    });
 $('#drill').on('click', function(){
     $('#drill_window').addClass('window_active');
 
@@ -298,59 +362,91 @@ $('.close').on('click', function(){
     $('#drill_window').removeClass('window_active');
 });
 
-$('#portfolio').on('click', function(){
-    $('#port_window').addClass('window_active');
+$('#all').on('click', function(){
+    $('#all_window').addClass('window_active');
 
+});
+
+$('.wrapper').on('click', function(){
+    $('#all_window').removeClass('window_active');
 });
 
 $('.close').on('click', function(){
-    $('#port_window').removeClass('window_active');
-});
-$('.owl-carousel').owlCarousel({
-    items:1.3,
-    loop:false,
-    stagePadding: 50,
-    touchDrag: true,
-    center:true,
-    margin: 60,
-    smartSpeed: 800,
-    startPosition: 'URLHash',
-    responsiveClass:true,
-    autoWidth:true,
-    responsive: {
-        0: {
-            items: 1.1,
-            stagePadding: 0,
-            margin: 10
-        },
-        1200: {
-            items: 1.3,
-            loop:false,
-            stagePadding: 150,
-            touchDrag: true,
-            center:true,
-            margin: 160,
-            URLhashListener:true,
-            smartSpeed: 800
-        }
-    }
+    $('#all_window').removeClass('window_active');
 });
 
-$(document).ready(function() {
-$('.owl-carousel').on('changed.owl.carousel', function(e) {
-    $('.slide-number').text(e.item.index + 1)
-});
+$('#pskov').on('click', function(){
+    $('#pskov_window').addClass('window_active');
+
 });
 
-$(document).ready(function() {
-    $('.owl-carousel').on('click', '.owl-item', function () {
-        //получить индекс
-        var click = $(this).index();
-        //по клику листаем к слайду на который кликнули
-        $('.owl-carousel').trigger( 'to.owl.carousel', [click] );
-        // Или добавляем свою функцию вместо листания
-    });
+$('.wrapper').on('click', function(){
+    $('#pskov_window').removeClass('window_active');
 });
+
+$('.close').on('click', function(){
+    $('#pskov_window').removeClass('window_active');
+});
+
+
+
+
+
+$('#portfolio').on('click', function(){
+    $('#port_window').css('display', 'block');
+    $('.ports').css('display','block');
+});
+
+$('.close').on('click', function(){
+    $('.ports').css('display','none');
+    $('#port_window').fadeOut(500);
+});
+// $('.owl-carousel').owlCarousel({
+//     items:1,
+//     loop:false,
+//     stagePadding: 50,
+//     touchDrag: true,
+//     center:true,
+//     margin: 60,
+//     nav:true,
+//     smartSpeed: 800,
+//     startPosition: 'URLHash',
+//     responsiveClass:true,
+//     autoWidth:true,
+//     responsive: {
+//         0: {
+//             items: 1.1,
+//             stagePadding: 0,
+//             margin: 10
+//         },
+//         1200: {
+//             items: 1.3,
+//             loop:false,
+//             stagePadding: 150,
+//             touchDrag: true,
+//             center:true,
+//             margin: 160,
+//             URLhashListener:true,
+//             smartSpeed: 800
+//         }
+//     }
+// });
+//
+// $(document).ready(function() {
+// $('.owl-carousel').on('changed.owl.carousel', function(e) {
+//     $('.slide-number').text(e.item.index + 1)
+// });
+// });
+//
+// $(document).ready(function() {
+//     $('.owl-carousel').on('click', '.owl-item', function () {
+//         //получить индекс
+//         var click = $(this).index();
+//         //по клику листаем к слайду на который кликнули
+//         $('.owl-carousel').trigger( 'to.owl.carousel', [click] );
+//         // Или добавляем свою функцию вместо листания
+//     });
+// });
 $(document).ready(function() {
 //1 пример
 $(function(){

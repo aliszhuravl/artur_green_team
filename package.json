@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "author": "iamyahoo",
   "devDependencies": {
-    "browser-sync": "^2.24.7",
+    "browser-sync": "^2.26.0",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^5.0.0",
     "gulp-csscomb": "^3.0.8",

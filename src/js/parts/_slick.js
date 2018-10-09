@@ -135,3 +135,67 @@ if ( $('.page-container').hasClass('page-main') ) {
         $(this).addClass('active_filter').siblings().removeClass('active_filter');
     });
 
+
+
+// Projects sliders
+
+
+$(document).ready(function() {
+    $('.slick-drill').slick({
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: true,
+        prevArrow: $('.d-btn_prev'),
+        nextArrow: $('.d-btn_next'),
+        touchMove: true,
+        speed: 1000,
+        adaptiveHeight: true
+    });
+});
+
+$('.slick-drill')
+    .on('beforeChange', function(event, slick, currentSlide, nextSlide){
+        var indexSlide = nextSlide + 1;
+        $('.d-slide-number').text(indexSlide);
+    });
+
+$(document).ready(function() {
+    $('.slick-all').slick({
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: true,
+        prevArrow: $('.a-btn_prev'),
+        nextArrow: $('.a-btn_next'),
+        touchMove: true,
+        speed: 1000,
+        adaptiveHeight: true
+    });
+});
+
+$('.slick-all')
+    .on('beforeChange', function(event, slick, currentSlide, nextSlide){
+        var indexSlide = nextSlide + 1;
+        $('.a-slide-number').text(indexSlide);
+    });
+
+$(document).ready(function() {
+    $('.slick-pskov').slick({
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: true,
+        prevArrow: $('.p-btn_prev'),
+        nextArrow: $('.p-btn_next'),
+        touchMove: true,
+        speed: 1000,
+        adaptiveHeight: true
+    });
+});
+
+$('.slick-pskov')
+    .on('beforeChange', function(event, slick, currentSlide, nextSlide){
+        var indexSlide = nextSlide + 1;
+        $('.p-slide-number').text(indexSlide);
+    });

@@ -306,6 +306,25 @@
 }
 
 @media (max-width: 640px) {
+  .window__inner .slick-slide img {
+    width: auto;
+    max-width: 320px;
+  }
+  .window__inner .slick-item {
+    height: 100%;
+    min-height: 320px;
+  }
+  .window__inner_header {
+    margin-bottom: 0;
+  }
+  .slick_nav {
+    top: auto;
+    bottom: 120px;
+  }
+  .slick-item iframe {
+    max-width: 1200px;
+    height: 320px;
+  }
   .owl-carousel video {
     min-width: 320px;
   }

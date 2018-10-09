@@ -221,6 +221,8 @@ form {
      width: 70%;
    }
   .section__inner_right{
+    visibility: hidden;
+    opacity: 0;
     width: 30%;
       a {
         max-width: 120px;
@@ -345,4 +347,26 @@ form {
 
 .mobile_show {
   display: none;
+}
+
+.section_about .bottom_hint {
+  a {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.section_why .bottom_hint {
+  a {
+    opacity: 0;
+    visibility: hidden;
+  }
+  .bottom_hint__inner_left {
+    display: none;
+  }
+}
+
+.link_result p {
+  opacity: 0;
+  visibility: hidden;
 }

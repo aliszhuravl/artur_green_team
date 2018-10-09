@@ -40,6 +40,7 @@
   overflow: hidden;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
     .logo_box {
       justify-content: center;
       width: 100%;
@@ -72,4 +73,33 @@
   opacity: 0;
   transition: all 0.5s;
   visibility: hidden;
+}
+
+.stripe_box {
+  width: 100%;
+  margin-top: 40px;
+}
+
+.stripe {
+  width: 0.0001%;
+  height: 2px;
+  background-color: #fff;
+  animation: move 3s ease-out;
+  opacity: 1;
+}
+
+@keyframes move {
+  0% {
+    width: 0.0001%;
+    opacity: 1;
+  }
+
+  99% {
+    width: 100%;
+    opacity: 0.0001;
+  }
+
+  100% {
+    opacity: 0;
+  }
 }

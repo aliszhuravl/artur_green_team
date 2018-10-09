@@ -30,6 +30,14 @@
   }
 }
 
+
+
+.slider_main .slick-slide img {
+  display: block;
+  width: 100%;
+  max-width: 440px;
+}
+
 .slider_nav {
   display: flex;
   align-items: center;

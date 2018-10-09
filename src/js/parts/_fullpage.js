@@ -8,10 +8,10 @@ function fullpageSettings() {
 
     $('#fullpage').fullpage({
         anchors: ['main', 'second', 'third', 'fourth', 'fith', 'sixth', 'seventh'],
-        scrollOverflow: true,
         verticalCentered: false,
         css3: true,
         menu: '#myMenu',
+        // licenseKey: 'OPEN-SOURCE-GPLV3-LICENSE',
         navigation: false,
         navigationPosition: 'left',
         afterLoad: function() {

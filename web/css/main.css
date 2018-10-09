@@ -928,7 +928,9 @@ form .form__item:nth-child(3n+3) {
 }
 
 .section_long .section__inner_right {
+	visibility: hidden;
 	width: 30%;
+	opacity: 0;
 }
 
 .section_long .section__inner_right a {
@@ -1057,6 +1059,25 @@ form .form__item:nth-child(3n+3) {
 
 .mobile_show {
 	display: none;
+}
+
+.section_about .bottom_hint a {
+	visibility: hidden;
+	opacity: 0;
+}
+
+.section_why .bottom_hint a {
+	visibility: hidden;
+	opacity: 0;
+}
+
+.section_why .bottom_hint .bottom_hint__inner_left {
+	display: none;
+}
+
+.link_result p {
+	visibility: hidden;
+	opacity: 0;
 }
 
 .footer {
@@ -1564,12 +1585,20 @@ label[for='phone'] {
 	z-index: 99;
 	display: flex;
 	overflow: hidden;
+	flex-direction: column;
 	width: 100%;
 	max-width: 100vw;
 	height: 100vh;
 	background-color: #0c0c0c;
 	align-items: center;
 	justify-content: center;
+}
+
+.preloader .logo_box {
+	display: flex;
+	width: 100%;
+	justify-content: center;
+	align-items: center;
 }
 
 .preloader .logo_box .logo_s {
@@ -1599,6 +1628,20 @@ label[for='phone'] {
 	height: 0;
 	transition: all .5s;
 	opacity: 0;
+}
+
+.stripe_box {
+	width: 100%;
+	margin-top: 40px;
+}
+
+.stripe {
+	width: .0001%;
+	height: 2px;
+	-webkit-animation: move 3s ease-out;
+	animation: move 3s ease-out;
+	opacity: 1;
+	background-color: #fff;
 }
 
 /* Slider */
@@ -1879,6 +1922,12 @@ label[for='phone'] {
 	font-size: 12px;
 	opacity: .6;
 	color: #fff;
+}
+
+.slider_main .slick-slide img {
+	display: block;
+	width: 100%;
+	max-width: 440px;
 }
 
 .slider_nav {
@@ -2356,21 +2405,38 @@ html.fp-enabled,
 
 .window__inner video {
 	z-index: 99;
+	max-width: 1280px;
+	align-self: center;
 }
 
 .window__inner_slider {
 	position: relative;
 	z-index: 12;
+	visibility: hidden;
+	height: 100%;
 }
 
 .window__inner_slider .slick-slide {
 	float: left;
 }
 
+.vid_inner {
+	justify-content: center;
+}
+
 .window_active {
 	visibility: visible;
 	-webkit-transform: translateY(0);
 	transform: translateY(0);
+}
+
+.window_active .window__inner_slider {
+	visibility: visible;
+}
+
+.port_window {
+	display: none;
+	visibility: visible;
 }
 
 .window__inner_bottom {
@@ -2416,6 +2482,7 @@ html.fp-enabled,
 .window__inner_header {
 	position: relative;
 	z-index: 12;
+	margin-bottom: 90px;
 	padding: 0 60px;
 }
 
@@ -2449,6 +2516,77 @@ html.fp-enabled,
 
 .owl-carousel video {
 	min-width: 1200px;
+}
+
+.slick-item {
+	display: flex;
+	width: 100%;
+	min-height: 640px;
+	align-items: center;
+	justify-content: center;
+}
+
+.slick-item iframe {
+	max-width: 1200px;
+}
+
+.slick_nav {
+	position: absolute;
+	z-index: 99;
+	top: 40%;
+	left: 0;
+	display: flex;
+	width: 100%;
+	height: 20px;
+	padding: 0 90px;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+	align-items: center;
+	justify-content: space-between;
+}
+
+.slick_nav .s_prev {
+	width: 15px;
+	height: 15px;
+	cursor: pointer;
+	-webkit-transform: rotate(45deg);
+	transform: rotate(45deg);
+	border-color: #fff;
+	border-bottom: 1px solid;
+	border-left: 1px solid;
+}
+
+.slick_nav .s_next {
+	width: 15px;
+	height: 15px;
+	cursor: pointer;
+	-webkit-transform: rotate(-135deg);
+	transform: rotate(-135deg);
+	border-color: #fff;
+	border-bottom: 1px solid;
+	border-left: 1px solid;
+}
+
+.video__inner_port {
+	display: flex;
+	width: 100%;
+	height: 100%;
+	align-items: center;
+	justify-content: center;
+}
+
+.vid_inner .window__inner_header {
+	margin-bottom: 0;
+}
+
+.vid_inner iframe {
+	z-index: 99;
+	width: 100%;
+	max-width: 1200px;
+}
+
+.ports {
+	display: none;
 }
 
 /**
@@ -3222,6 +3360,30 @@ form .form__item:nth-child(2n) {
 	padding-left: 0;
 }
 
+.window__inner .slick-slide img {
+	width: auto;
+	max-width: 320px;
+}
+
+.window__inner .slick-item {
+	height: 100%;
+	min-height: 320px;
+}
+
+.window__inner_header {
+	margin-bottom: 0;
+}
+
+.slick_nav {
+	top: auto;
+	bottom: 120px;
+}
+
+.slick-item iframe {
+	max-width: 1200px;
+	height: 320px;
+}
+
 .owl-carousel video {
 	min-width: 320px;
 }
@@ -3823,6 +3985,42 @@ h2 {
 100% {
 	-webkit-transform: translateY(0);
 	transform: translateY(0);
+}
+
+}
+
+@-webkit-keyframes move {
+
+0% {
+	width: .0001%;
+	opacity: 1;
+}
+
+99% {
+	width: 100%;
+	opacity: .0001;
+}
+
+100% {
+	opacity: 0;
+}
+
+}
+
+@keyframes move {
+
+0% {
+	width: .0001%;
+	opacity: 1;
+}
+
+99% {
+	width: 100%;
+	opacity: .0001;
+}
+
+100% {
+	opacity: 0;
 }
 
 }
