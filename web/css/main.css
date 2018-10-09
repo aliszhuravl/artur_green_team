@@ -3377,6 +3377,10 @@ form .form__item:nth-child(2n) {
 	padding-left: 0;
 }
 
+.vid_inner iframe {
+	height: auto;
+}
+
 .window__inner .slick-slide img {
 	width: auto;
 	max-width: 320px;

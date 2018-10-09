@@ -306,6 +306,9 @@
 }
 
 @media (max-width: 640px) {
+  .vid_inner iframe {
+    height: auto;
+  }
   .window__inner .slick-slide img {
     width: auto;
     max-width: 320px;
