@@ -1,2 +1,2 @@
-# artur_green_team
-Сайт команды Artur Green &amp; Team / В РАЗРАБОТКЕ / desktop / tablet / mobile v1.1
+# Artur Green & team
+Сайт команды Artur Green &amp; Team 
