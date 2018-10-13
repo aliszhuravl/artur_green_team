@@ -16,6 +16,20 @@ function fullpageSettings() {
         navigationPosition: 'left',
         afterLoad: function() {
             fullpageInit = true;
+        },
+        onLeave: function(index, nextIndex, direction){
+            if (direction == 'down') {
+                $('.cover-animation').addClass('cover-action');
+                setTimeout(function() {
+                    $('.cover-animation').removeClass('cover-action');
+                }, 1100);
+            }
+            if (direction == 'up') {
+                $('.cover-animation').addClass('cover-action');
+                setTimeout(function() {
+                    $('.cover-animation').removeClass('cover-action');
+                }, 1100);
+            }
         }
         // afterLoad: function(anchorLink, index) {
         //     if (anchorLink == 'main' && index == 1) {

@@ -38,7 +38,46 @@ $('.close').on('click', function(){
 });
 
 
+$('#mir').on('click', function(){
+    $('#mir_window').addClass('window_active');
 
+});
+
+$('.wrapper').on('click', function(){
+    $('#mir_window').removeClass('window_active');
+});
+
+$('.close').on('click', function(){
+    $('#mir_window').removeClass('window_active');
+});
+
+
+$('#invo').on('click', function(){
+    $('#invo_window').addClass('window_active');
+
+});
+
+$('.wrapper').on('click', function(){
+    $('#invo_window').removeClass('window_active');
+});
+
+$('.close').on('click', function(){
+    $('#invo_window').removeClass('window_active');
+});
+
+
+$('#vassa').on('click', function(){
+    $('#vassa_window').addClass('window_active');
+
+});
+
+$('.wrapper').on('click', function(){
+    $('#vassa_window').removeClass('window_active');
+});
+
+$('.close').on('click', function(){
+    $('#vassa_window').removeClass('window_active');
+});
 
 
 $('#portfolio').on('click', function(){
